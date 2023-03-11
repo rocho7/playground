@@ -1,0 +1,17 @@
+.operators {
+  color: coral;
+}
+
+.operators-uppercase {
+  text-transform: uppercase;
+}
+
+ul {
+  display: inline-flex;
+}
+
+h4 {
+  font-weight: 75;
+    font-size: 16px;
+    color: fuchsia;
+}

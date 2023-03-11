@@ -1,0 +1,6 @@
+.mai-item {
+  &.active {
+    background: rgba(0, 0, 0, 0.03);
+    border-left-color: #9f72e6;
+  }
+}

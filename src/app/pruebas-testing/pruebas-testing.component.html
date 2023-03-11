@@ -1,0 +1,68 @@
+<h1>pruebas-testing works!</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div>
+          <h2 id="title">Angular SumApp</h2>
+
+          <p id="description">Esta (app) suma</p>
+
+          <span>Número 1:</span><input type="number" #num1 id="num1">
+          <span>Número 2:</span><input type="number" #num2 id="num2">
+
+          <br><br><br>
+
+          <button (click)="printAdd(num1.value, num2.value)" #calc id="calc">Sumar!</button>
+
+
+          <br><br><br>
+
+          Resultado: <input type="text" #result id="result">
+      </div>
+
+      <a href="https://www.youtube.com/watch?v=BMomngKK6bA&t=40s">Pruebas unitarias</a><br>
+      <a href="https://www.youtube.com/watch?v=KsmXSJcfasU">Pruebas unitarias servicios</a><br>
+      <a href="https://beeceptor.com/console/testingservice">Consola para generar apis</a><br>
+      <a href="https://mockapi.io/projects/63525dd8a9f3f34c373bb1cf">Consola MOCK API generar apis</a>
+      <h4>Generar reporte de cobertura comando: npm run test-coverage</h4>
+      <p>Para ver el reporte de cobertura file:///C:/playground/rxjs/coverage/rxjs/index.html</p>
+      <div>
+        <form [formGroup]="form" (ngSubmit)="submit(form)">
+          <input type="email" name="email" id="email" formControlName="email">
+          <br>
+          <input type="password" name="password" id="password" formControlName="password">
+          <button type="submit" class="btn">Send</button>
+        </form>
+        <div *ngIf="response">
+          Respuesta desde Mock api {{ response | json }}
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <h3>CURSO UDEMY</h3>
+      <a href="https://capgemini.udemy.com/course/angular-jasmine-karma/learn/lecture/24795202#overview" target="_blank" rel="noopener noreferrer">Jasmine course</a>
+      <br>
+      Que es la cobertura:
+      mide el grado en que el código fuente de un programa ha sido probado.
+      Karma:
+      Es una herramienta que nos prermite ejecutar en los navegadores pruebas Jasmine desde la línea de comandos.
+      <div *ngFor="let item of photosAmount">
+        <label [for]="item.id">{{item.titel}}</label>
+        <div (click)="onInputChange('minus', item)">
+          <i class="fas fa-minus">-</i>
+        </div>
+        <span>{{item.amount}}</span>
+        <div (click)="onInputChange('plus', item)">
+          <i class="fas fa-plus">+</i>
+        </div>
+        <div>
+          {{item.price}}€  = {{item.amount * item.price}}€
+        </div>
+
+      </div>
+      <button (click)="onClearPhotos()">Delete all</button>
+    </div>
+  </div>
+</div>
+

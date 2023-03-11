@@ -1,0 +1,35 @@
+<p>operators-transformation works!</p>
+<div>Worikng with <span class="operators operators-uppercase">mergeAll, MERGEMAP, SWITCHMAP, concatMap, exhaustMap</span></div>
+<div class="row">
+  <a href="https://www.udemy.com/course/rxjs-de-cero-hasta-los-detalles/learn/lecture/16652918#overview">Operadores de transformación</a>
+  <div class="col-6">
+    <p>Example <span class="operators">mergeAll</span></p>
+    <h4>mergeAll es un observable que emite observables, se subscribirá a ellos y los completará</h4>
+    <label for="input-mergeall-label">Después de escribir espera un seg. e emite valor</label>
+    <input type="text" name="mergeall" #mergeallInput> <span #showMergeAllResult></span>
+  </div>
+  <div class="col-6">
+    <p>Example <span class="operators">mergeMap</span></p>
+    <h4>mergeMap es un observable que permite pasar observables como parámetro y que emite observables, se subscribirá a ellos y los completará</h4>
+    <label for="input-mergemap-label">Realiza una búsqueda en una API.</label>
+    <input type="text" name="mergemap" #mergeMapInput> <span #showMergeMapResult></span>
+  </div>
+  <div class="col-6">
+    <p>Example <span class="operators">switchMap</span></p>
+    <h4>switchMap es un observable que permite pasar observables como parámetro y que emite observables, se subscribirá a ellos <span class="high-light">cancelando la subscripción previa y complentando la última subscripción</span></h4>
+    <label for="input-switchmap-label">Realiza una búsqueda en una API.</label>
+    <input type="text" name="switchmap" #switchMapInput> <span #showSwitchMapResult></span>
+  </div>
+  <div class="col-6">
+    <p>Example <span class="operators">concatMap</span></p>
+    <h4>concatMap es un observable que permite pasar observables como parámetro y que emite observables, se subscribirá a ellos y los completará respetando el orden, espera que termine una para empezar la otra.</h4>
+    <label for="input-concatmap-label">Realiza una búsqueda en una API.</label>
+    <input type="text" name="concatmap" #concatMapInput> <span #showConcatMapResult></span>
+  </div>
+  <div class="col-6">
+    <p>Example <span class="operators">exhaustMap</span></p>
+    <h4>exhaustMap es un observable que permite pasar observables como parámetro y que emite observables,  <span class="high-light">solo permite tener una subscripción activa, que será la primera, cancelando las siguientes</span>. Esto es útil cuando un usuario presiona varias veces un botón.</h4>
+    <label for="input-exhaustmap-label">Realiza una búsqueda en una API.</label>
+    <input type="text" name="concatmap" #exhaustMapInput> <span #showExhaustMapResult></span>
+  </div>
+</div>

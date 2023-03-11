@@ -1,0 +1,29 @@
+<p>design-pattern works!</p>
+<div>
+  <!-- <form (ngSubmit)="submit()"> -->
+  <div class="form-group">
+    <label>Payment methos</label>
+    <select [(ngModel)]="methodPayment" class="form-control">
+      <option value="master">Master Card</option>
+      <option value="visa">Visa Card</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>User name</label>
+    <input type="text" id="user" name="user" [(ngModel)]="user" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>Amount</label>
+    <input type="number" [(ngModel)]="amount" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <input type="button" value="Pay" (click)="submit()" class="btn btn-primary">
+  </div>
+  <!-- </form> -->
+</div>
+<div>
+  <h3 #messagePayment></h3>
+</div>

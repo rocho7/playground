@@ -1,0 +1,12 @@
+<div>
+  <h1>Component Parent - comunicación padre e hijo</h1>
+  <div>
+    <button (click)="subtract()">subtract</button>
+    <button (click)="addition()">addition</button>
+    <br>
+    <button (click)="updateUser()">updateUser</button>
+    <app-child [myNewNumber]="myNumber" [myName]="name" [myUser]="user.name">
+      <h3 #contentParagraph>Esto se debería ver con un ng-content en el componente hijo</h3>
+    </app-child>
+  </div>
+</div>

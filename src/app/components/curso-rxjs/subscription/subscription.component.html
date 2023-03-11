@@ -1,0 +1,26 @@
+<p>subscription works!</p>
+<div class="row">
+  <div class="col-6">
+    <ng-container *ngFor="let item of of$ | async">
+      <ul class="inline">
+        <li>{{item}}</li>
+      </ul>
+    </ng-container>
+  </div>
+  <div class="col-6">
+    <p>Example observable range</p>
+    <p>range === {{ range$ | async }}</p>
+    <ng-container *ngFor="let item of prueba">
+      <ul class="inline">
+        <li>{{item}}</li>
+      </ul>
+    </ng-container>
+  </div>
+  <div class="col-6">
+    <p>Example interval and timer</p>
+    <div>interval will stop in 10 seconds, it counts from 0 to 9: <p>{{interval$ | async}}</p></div>
+    <div class="col-6 message-alert" *ngIf="(timer$ | async) === 0">
+      Show alert in five second because of timer$
+    </div>
+  </div>
+</div>

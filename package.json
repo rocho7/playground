@@ -1,0 +1,68 @@
+{
+  "name": "rxjs",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "test-coverage": "ng test --code-coverage",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "hmr": "ng serve --configuration hmr",
+    "startUltimate": "webpack-dev-server"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "pre-push": "npm test"
+    }
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~11.0.3",
+    "@angular/cdk": "^11.0.3",
+    "@angular/common": "~11.0.3",
+    "@angular/compiler": "~11.0.3",
+    "@angular/core": "~11.0.3",
+    "@angular/forms": "~11.0.3",
+    "@angular/material": "^11.0.3",
+    "@angular/platform-browser": "~11.0.3",
+    "@angular/platform-browser-dynamic": "~11.0.3",
+    "@angular/router": "~11.0.3",
+    "bootstrap": "^5.2.0",
+    "devextreme": "20.2.4",
+    "devextreme-angular": "20.2.4",
+    "jquery": "^3.6.1",
+    "jszip": "^3.5.0",
+    "popper.js": "^1.16.1",
+    "rxjs": "~6.6.0",
+    "rxjs-compat": "^6.6.7",
+    "sass-loader": "^13.2.0",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.10.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.1100.3",
+    "@angular/cli": "~11.0.3",
+    "@angular/compiler-cli": "~11.0.3",
+    "@angularclass/hmr": "^3.0.0",
+    "@types/jasmine": "~3.6.0",
+    "@types/node": "^12.11.1",
+    "@types/webpack-env": "^1.16.0",
+    "codelyzer": "^6.0.0",
+    "husky": "^8.0.1",
+    "jasmine-core": "~3.6.0",
+    "jasmine-spec-reporter": "~5.0.0",
+    "karma": "~5.1.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.0.3",
+    "karma-jasmine": "~4.0.0",
+    "karma-jasmine-html-reporter": "^1.5.0",
+    "protractor": "~7.0.0",
+    "tailwindcss": "^2.1.4",
+    "ts-node": "~8.3.0",
+    "tslint": "~6.1.0",
+    "typescript": "~4.0.2"
+  }
+}

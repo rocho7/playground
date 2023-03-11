@@ -1,0 +1,6 @@
+<p>mail-folder works!</p>
+<h2>{{ title | async }}</h2>
+<app-mail-item
+  *ngFor="let message of (data | async).messages"
+  [message]="message"
+></app-mail-item>

@@ -1,0 +1,33 @@
+<a href="https://www.youtube.com/watch?v=OrmIfW8Ak3w&list=PLX7eV3JL9sfkgIka4CmlLMkErbaVPe4LC">Video control value accessor</a>
+<p>control-value-accessor works!</p>
+<form [formGroup]="form" class="form">
+  <input type="text" formControlName="itemName">
+  <app-name-field formControlName="isLocked"></app-name-field>
+  <button [disabled]="!form.touched" (click)="onSubmit()">Submit</button>
+</form>
+
+<form [formGroup]="formAccessor">
+  <app-element-input-filter formControlName="name"></app-element-input-filter>
+  <app-element-input-filter formControlName="lastName"></app-element-input-filter>
+</form>
+<pre>
+  {{ formAccessor.value | json }}
+</pre>
+<pre>
+  isTouched : {{ formAccessor.touched }}
+</pre>
+
+<h1>Form Array</h1>
+<form [formGroup]="formMultiple" (ngSubmit)="onSubmitFormArray()">
+    <ng-container *ngFor="let el of elements?.controls; let i = index" formArrayName="elements">
+      <div  [formGroupName]="i">
+        <!-- <input formControlName="name"> -->
+        <app-element-input-filter formControlName="name"></app-element-input-filter>
+        <app-element-input-filter formControlName="email"></app-element-input-filter>
+      </div>
+    </ng-container>
+  <button type="submit" class="btn btn-info">Submit formArray</button>
+</form>
+<pre>
+  {{ formMultiple.value | json }}
+</pre>

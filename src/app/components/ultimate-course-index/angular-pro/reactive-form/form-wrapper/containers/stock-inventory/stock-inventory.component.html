@@ -1,0 +1,27 @@
+<div class="col-6">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <app-stock-branch [parent]="form"></app-stock-branch>
+        <app-stock-selector
+            [parent]="form"
+            [products]="products"
+            (added)="onProductAdded($event)">
+        </app-stock-selector>
+        <app-stock-products
+            [parent]="form"
+            [map]="productMap"
+            (removed)="onProductRemoved($event)">
+        </app-stock-products>
+        <h3 class="stock-inventory__price">
+          Total: {{ total | currency:'EUR':true}}
+        </h3>
+        <div>
+            <button mat-icon-button color="primary"
+                type="submit"
+                [disabled]="form.invalid">
+                Submit
+            </button>
+        </div>
+    </form>
+    {{form.value | json }}
+</div>

@@ -1,0 +1,56 @@
+<div>
+  <p>directives-custom works!</p>
+  <div class="row">
+    <div class="col-6">
+        <label>Credit card number
+          <input
+            type="text"
+            name="card"
+            id="card"
+            appCreditCard>
+        </label><br>
+        <label
+            appTooltip="texto desde el html"
+            #myTooltip="tooltip">MUESTRA TOOLTIP ...
+            <span
+            (mouseover)="myTooltip.show()"
+            (mouseout)="myTooltip.hide()"
+            >(?)</span><br>
+            <input type="text" name="" id="">
+        </label>
+        <div appTooltip="mentor.JavaScript"></div>
+    </div>
+    <div class="col-6">
+      <h3>Creating a custom structural Directive</h3>
+      <div class="row">
+        <div class="col-6">
+          <h4>Normal *ngFor</h4>
+          <ul>
+              <li *ngFor="let item of items; let i = index;">
+                  {{ i }} Member: {{ item.name | json }}
+              </li>
+          </ul>
+        </div>
+        <div class="col-6">
+          <h4>By using directive *appMyFor</h4>
+          <ul>
+              <li *appMyFor="let item of items; let i = index;">
+                  {{ i }} Member: {{ item.name | json }}
+              </li>
+          </ul>
+
+        </div>
+        <div class="col-12">
+          <h4>By using appMyFor [appMyForOf]="items" let-item let-i="index"</h4>
+            <h4>Creating the similar directive to  ng-container [ngTemplateOutlet]="outlet" [ngOutletContext]="context"</h4>
+
+          <ng-template appMyFor [appMyForOf]="items" let-item let-i="index">
+            <li>
+                {{ i }} Member: {{ item.name | json }}
+            </li>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

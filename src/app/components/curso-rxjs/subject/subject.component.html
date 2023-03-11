@@ -1,0 +1,11 @@
+<p>subject works!</p>
+
+<h4>Bascket total products chosen {{ counter$ | async }}</h4>
+<ng-container *ngFor="let item of products">
+  <button (click)="product(item)">{{item?.name}}</button>
+  <span>{{item?.value}}</span>
+  <br>
+  <button (click)="productAdd()">Add</button>
+  <button (click)="productRemove()">Remove</button>
+  <br> <br>
+</ng-container>

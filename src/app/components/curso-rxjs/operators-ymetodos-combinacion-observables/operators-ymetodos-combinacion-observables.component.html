@@ -1,0 +1,23 @@
+<p>operators-ymetodos-combinacion-observables works!</p>
+
+<div>Worikng with <span class="operators operators-uppercase">combineLatest, forkJoin </span></div>
+<div class="row">
+  <a href="https://www.udemy.com/course/rxjs-de-cero-hasta-los-detalles/learn/lecture/16561988#overview">
+    Operadores y métodos de combinación de observables
+  </a>
+  <div class="col-6">
+    <p>Example <span class="operators">combineLatest</span></p>
+    <form [formGroup]="form">
+      <h4>Combina siempre los últimos valores de los observables.</h4>
+      <label for="input-debounce-label">Email</label>
+      <input type="email" name="email" #emailInput formControlName="email"> <span #emailSpan></span>
+      <label for="input-debounce-label">Password</label>
+      <input type="password" name="password" #passwordInput formControlName="password"> <span #passwordSpan></span>
+    </form>
+  </div>
+  <div class="col-6" *ngIf="userGithubInfo$ | async; let userInfo">
+    <p>Example <span class="operators">forkJoin</span></p>
+    <h4>Espera que complete todas las subscripciones para mostrar la respuesta</h4>
+    <p>Repository: {{ userInfo?.user?.login }} - Num. repo = {{ userInfo?.repo.length }} - subscription {{ userInfo?.subscriptions.length }}</p>
+  </div>
+</div>

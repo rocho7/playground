@@ -1,0 +1,17 @@
+<p>pipes-custom works!</p>
+<div class="row">
+    <div class="col-6">
+        <h4>Using pipe into HTML DOM</h4>
+        <div *ngFor="let file of files" class="margin-files">
+            <p>{{ file.name }}</p>
+            <p>{{ file.size | fileSize: 'megabytes'}}</p>
+        </div>
+    </div>
+    <div class="col-6">
+        <h4>Using pipe as PROVIDER into COMPONENT</h4>
+        <div *ngFor="let file of mapped" class="margin-files">
+            <p>{{ file.name }}</p>
+            <p>{{ file.size }}</p>
+        </div>
+    </div>
+</div>

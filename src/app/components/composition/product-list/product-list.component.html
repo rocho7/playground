@@ -1,0 +1,8 @@
+<h1>product-list works!</h1>
+<app-search-bar [control]="listPage.searchControl"></app-search-bar>
+
+<app-data-list
+  *ngIf="{data: listPage.listData$ | async, search: listPage.listSearch$ | async} as vm;"
+  [data]="vm.data"
+  [search]="vm.search">
+</app-data-list>

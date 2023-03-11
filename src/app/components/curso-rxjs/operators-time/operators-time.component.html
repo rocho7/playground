@@ -1,0 +1,17 @@
+<p>operators-time works!</p>
+<div>Worikng with <span class="operators operators-uppercase">debounceTime, distinctUntilChanged </span></div>
+<div class="row">
+  <a href="https://www.udemy.com/course/rxjs-de-cero-hasta-los-detalles/learn/lecture/16561988#overview">Operadores de tiempo</a>
+  <div class="col-6" #debounceDiv>
+    <p>Example <span class="operators">debounceTime</span>&nbsp;<span class="operators">distinctUntilChanged</span></p>
+    <h4>Espera un determinado tiempo para emitir el valor.</h4>
+    <label for="input-debounce-label">Después de escribir espera un seg. e emite valor</label>
+    <input type="text" name="debounce" #debounceInput> <span #showDebounceResult></span>
+  </div>
+  <div class="col-6" #throttleDiv>
+    <p>Example <span class="operators">throttleTime</span>&nbsp;<span class="operators">distinctUntilChanged</span></p>
+    <h4>Emite un valor y spera un determinado tiempo para emitir el sguiente valor.</h4>
+    <label for="input-throttle-label">Después de escribir espera un seg. e emite valor</label>
+    <input type="text" name="throttle" #throttleInput> <span #showThrottleResult></span>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+h3 {
+  background-color: blue;
+  color: aliceblue;
+  text-transform: uppercase;
+}
+
+::ng-deep p {
+  text-decoration: dashed;
+  text-transform: capitalize;
+  font-size: medium;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.col-6 {
+  border: 2px solid cyan;
+  padding-bottom: 15px;
+}
+
+::ng-deep .operators {
+  color: coral;
+}
+
+::ng-deep .operators-uppercase {
+  text-transform: uppercase;
+}
+
+::ng-deep ul {
+  display: inline-flex;
+}
+
+::ng-deep h4 {
+  font-weight: 75;
+    font-size: 16px;
+    color: fuchsia;
+}
+
+::ng-deep .high-light {
+  color: chartreuse;
+}

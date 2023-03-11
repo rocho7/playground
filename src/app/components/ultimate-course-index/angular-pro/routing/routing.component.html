@@ -1,0 +1,32 @@
+<p>routing works!</p>
+<h3>Resolve</h3>
+<p>Carga los datos previamente antes de navegar a una determinada ruta</p>
+<div class="app">
+  <div class="app__content">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="folder/inbox"
+                routerLinkActive="active"
+                >Inbox</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="folder/trash"
+                routerLinkActive="active"
+                >Trash</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <app-mail-app></app-mail-app>
+  </div>
+</div>

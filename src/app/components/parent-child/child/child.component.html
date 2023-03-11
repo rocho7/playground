@@ -1,0 +1,32 @@
+<h1>Component child</h1>
+<div class="row">
+  <div class="col-6">
+    <p>{{ myNewNumber }} - {{ myUser }}</p>
+    <ng-content></ng-content>
+    <ng-template #myTemplate>
+      <h2>Hello ng-template</h2>
+    </ng-template>
+
+    <!-- <ng-template [ngTemplateOutlet]="myTemplate" [ngOutletContext]="myTemplate"></ng-template> -->
+
+  </div>
+  <div class="col-6">
+    <h4>Directivas</h4>
+    <p appDestacar *appMultiplicar="newComponent; let i = index">{{ i }}directiva creada para resaltar texto</p>
+  </div>
+  <div class="col-6">
+    <h1>Pipes</h1>
+    <h4>Se llama a este método demasiadas veces, por que se llama desde el DOM. Ver en consola</h4>
+    <h5>Evitar llamar métodos desde el DOM. Ej. showMessage() Utilizar PIPES</h5>
+    <input type="text" name="message" id="message" [(ngModel)]="message">
+    {{ message | noRepeatMessage }}
+    <!-- No hacer esto nunca, llamar método desde HTML {{showMessage()}} -->
+  </div>
+  <div class="col-6">
+    <h1>Lifecycle</h1>
+    <h3>Orden y veces que se les llama</h3>
+    <ul *ngFor="let item of lifeCycle; let i = index">
+      <li>{{i+1}}.- {{ item.name.toUpperCase() }} - times called === {{ item.timesCalled }}</li>
+    </ul>
+  </div>
+</div>

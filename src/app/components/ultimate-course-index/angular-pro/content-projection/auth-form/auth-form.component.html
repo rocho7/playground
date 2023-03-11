@@ -1,0 +1,25 @@
+<p>auth-form works!</p>
+<div>
+  <form (ngSubmit)="onSubmit(form.value)"  #form="ngForm">
+    <ng-content select="h3"></ng-content>
+    <h4>{{ messageFromFactory }}</h4>
+    <label>
+      Email address <br>
+      <input type="email" name="email" id="email" ngModel #email>
+    </label><br>
+    <label>
+      Password <br>
+      <input type="password" name="password" id="password" ngModel> <br>
+    </label><br>
+    <ng-content select=".remember"></ng-content>
+    <ng-content select="button"></ng-content>
+    <button
+    mat-flat-button color="accent"
+    type="submit" *ngIf="messageFromFactory">
+      solo visible para el componente dinámcio
+    </button>
+    <app-auth-message
+    [style.display]="(showMessage) ? 'inherit' : 'none'">
+    </app-auth-message>
+  </form>
+</div>

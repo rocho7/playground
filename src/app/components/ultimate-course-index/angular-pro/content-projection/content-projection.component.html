@@ -1,0 +1,80 @@
+<p>content-projection works!</p>
+<div class="row">
+  <div class="col-6">
+    <app-auth-form (submitted)="createUser($event)">
+      <h3>Create Account</h3>
+      <button
+         type="submit"
+         mat-raised-button color="accent">
+        Join us
+      </button>
+    </app-auth-form>
+  </div>
+  <div class="col-6">
+    <app-auth-form (submitted)="loginUser($event)">
+      <h3>Login</h3>
+      <button
+        type="submit"
+        mat-raised-button color="primary">
+      Login
+      </button>
+      <app-auth-remember class="remember" (checked)="onRememberme($event)"></app-auth-remember>
+    </app-auth-form>
+  </div>
+  <div class="col-6">
+    <h3>Creating a Dynamic components with ComponentFactory and reordering</h3>
+    <h4>Using resolveComponentFactory</h4>
+    <a href="https://stackblitz.com/edit/angular-dynamically-creating-components-vh5gpb?file=app%2Fapp.component.ts">Ejemplo</a><br>
+    <button (click)="destroy()" mat-flat-button color="accent">
+      Destroy dynamic component
+    </button>
+    <button (click)="createDynamicComponent()" mat-flat-button color="warn">
+      Create dynamic component
+    </button>
+    <button (click)="moveDynamicComponent()" mat-flat-button color="primary">
+      Create a new one and Move dynamic component
+    </button>
+    <div #entry></div>
+  </div>
+  <div class="col-6">
+    <h3>Using TemplateRef to generate templates passing params</h3>
+    <h4>Using ng-template and assign the template to the div</h4>
+    <div #tmplentry></div>
+    <ng-template #tmpl let-name let-location="location">
+      This is a <b>{{name}}</b> generated in the <b>{{location}}</b>
+    </ng-template>
+    <ng-template #tmplOutlet let-info let-data="data">
+      TemplateOutlet <b>{{info}}</b> generated in the <b>{{data}}</b>
+    </ng-template>
+    <h4>Using ng-container [ngTemplateOutlet]="tmpl"</h4>
+    <ng-container
+      [ngTemplateOutlet]="tmplOutlet"
+      [ngTemplateOutletContext]="{$implicit: 'NUEVA INFO', data: 'DESDE TEMPLEATE OUTLET CONTEXT'}">
+    </ng-container>
+  </div>
+  <div class="col-6">
+    <h3>ViewEncapsulation</h3>
+    <a href="https://rootstack.com/es/blog/angular-que-se-refieren-con-view-encapsulation">Ejemplo</a>
+    <app-no-encapsulation></app-no-encapsulation>
+    <app-emulated-encapsulation></app-emulated-encapsulation>
+    <app-shadow-dom-encapsulation></app-shadow-dom-encapsulation>
+  </div>
+  <div class="col-6">
+    <h3>Change Detection</h3>
+    <div>
+      <button (click)="addProp()">add property</button>
+      <button (click)="changeUser()">change user</button>
+      <button (click)="changeName()">change name</button>
+      <div class="row">
+        <div class="col-6">
+          <h4>OnPush detection</h4>
+          <app-onpush-detection [user]="user"></app-onpush-detection>
+        </div>
+        <div class="col-6">
+          <h4>Default detection</h4>
+          <app-default-detection [user]="user"></app-default-detection>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

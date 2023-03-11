@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Dependency Injection</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse dark" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="resolution-modifiers">Resolution Modifieres</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="dependency-providers">Dependency providers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="injection-token">Injection token</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<h4>Prueba de injection token</h4>
+<ng-container>
+  <ul *ngFor="let user of users | async">
+    <li>{{user?.name}}</li>
+  </ul>
+</ng-container>
+<router-outlet></router-outlet>

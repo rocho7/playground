@@ -1,0 +1,43 @@
+<p>operador-pluck works! Sección 5 curso Udemy</p>
+<div>Worikng with <span class="operators operators-uppercase">PLUCK, MAPTO, FILTER, DISTINCT, DISTINCTUNTILCHANGED, distinctUntilKeyChanged </span></div>
+<div class="row">
+  <a href="https://www.udemy.com/course/rxjs-de-cero-hasta-los-detalles/learn/lecture/16527250#overview">Operadores básicos curso Udemy</a>
+  <div #someDiv></div>
+  <button (click)="goTo()">go to HIJO 2</button>
+  <div class="col-6">
+    <p>Get URI by using operator <span class="operators">PLUCK</span> <span class="baseUri"></span> </p>
+  </div>
+  <div class="col-6">
+    <p>Type a letter <span class="key"></span> </p>
+  </div>
+  <div class="col-6">
+    <p>Example <span class="operators">mapTo</span><span class="mapTo"></span> </p>
+  </div>
+  <div class="col-6">
+    <p>Example <span class="operators">filter</span></p>
+      <ul class="filter" *ngFor="let p of people">
+        <li>{{ p.name }}</li>
+      </ul>
+  </div>
+  <div class="col-6">
+    <p>Example <span class="operators">distinct</span></p>
+    <h4>No permite repetir valores</h4>
+      <ul class="filter" *ngFor="let p of superHeroes">
+        <li>{{ p.name }} - {{ p.type }}</li>
+      </ul>
+  </div>
+  <div class="col-6">
+    <p>Example <span class="operators">distinctUntilChanged</span></p>
+    <h4>No permite repetir valores, si los valores repeditos van seguidos</h4>
+      <ul class="filter" *ngFor="let p of superHeroesUntilChanged">
+        <li>{{ p.name }}</li>
+      </ul>
+  </div>
+  <div class="col-6">
+    <p>Example <span class="operators">distinctUntilKeyChanged</span></p>
+    <h4>No permite repetir valores, si los valores repeditos van seguidos, pasando la key del objeto</h4>
+      <ul class="filter" *ngFor="let p of superHeroesUntilKeyChanged">
+        <li>{{ p.name }}</li>
+      </ul>
+  </div>
+</div>

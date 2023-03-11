@@ -1,0 +1,22 @@
+<p>stock-branch works!</p>
+<div [formGroup]="parent">
+  <div formGroupName="store" class="store-container">
+      <input type="text" name="branch" id="branch" formControlName="branch" placeholder="Branch">
+      <div
+        class="error"
+        *ngIf="required('branch')">
+        Required field
+      </div>
+      <div
+        class="error"
+        *ngIf="invalidCustomValidator">
+        It must contain 1 letter and 3 numbers
+      </div>
+      <input type="text" name="code" id="code" formControlName="code" placeholder="Code id">
+      <div
+        class="error"
+        *ngIf="required('code')">
+        Required field
+      </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<p>view-child works!</p>
+<input type="number" #name  id="num1">
+<button (click)="checkReplaySubject()">checkReplaySubject</button>
+<br>
+<button (click)="goTo()">go to HIJO 2 relative to</button>
+<br>
+<ul >
+  <li>
+    <a routerLink="hijo">Hijo<span >(ng-container)</span></a>
+  </li>
+  <li >
+    <a  routerLink="hijo2">hijo2 routerLink="hijo2"</a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>
+component hijo utilizando ng-container
+<!-- <app-hijo *ngFor="let user of users"
+          [dataUser]="user"
+          (delete)="deleteUserFromList( $event )">
+          <h3 id="etiqueta">Esto es una etiqueta definida en elemento padre</h3>
+          <h3 id="footer">otra etiqueta</h3>
+</app-hijo> -->

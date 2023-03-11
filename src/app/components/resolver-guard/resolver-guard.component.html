@@ -1,0 +1,17 @@
+<p>resolver-guard works!</p>
+<h1>Ejemplos con RESOLVE, CANACTIVATE, CANDEACTIVATE</h1>
+<div class="row">
+  <div class="col-6">
+    <h4>Resolve</h4>
+    <ng-container *ngIf="users">
+      <select (change)="selectedUser($event)">
+        <option *ngFor="let user of ( users )" [value]="user.id">{{ user.name }} -- {{ user.username }}</option>
+      </select>
+      <button type="submit" (click)="save()">Save user</button>
+    </ng-container>
+  </div>
+  <div class="col-6">
+    <h4>Guard</h4>
+  </div>
+</div>
+

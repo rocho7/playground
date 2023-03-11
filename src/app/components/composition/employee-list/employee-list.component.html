@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>employee-list works!</h1>
+  <a href="https://github.com/joshuamorony/composition-vs-inheritance/tree/service-composition-two/src">github project</a> <br>
+  <a href="https://www.youtube.com/watch?v=rcDsRyVhcxY">youtube</a>
+
+  <app-search-bar [control]="listPage.searchControl"></app-search-bar>
+
+  <app-data-list
+    *ngIf="{data: listPage.listData$ | async, search: listPage.listSearch$ | async} as vm;"
+    [data]="vm.data"
+    [search]="vm.search">
+  </app-data-list>
+
+
+</div>
+
+<div class="container">
+  <app-product-list></app-product-list>
+</div>

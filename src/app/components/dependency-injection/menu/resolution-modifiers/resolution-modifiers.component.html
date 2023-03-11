@@ -1,0 +1,31 @@
+<h3>resolution-modifiers!</h3>
+<a href="https://www.youtube.com/watch?v=uVGnsmm9g-I">Video Decoded Fronted Resolution modifiers</a>
+<a href="https://runebook.dev/es/docs/angular/guide/dependency-injection-in-action">Ejemplo Resolution modifiers</a>
+
+<ul>
+  <li>
+    @Optional() <br>
+    constructor(@Optional() private readonly loggerService: LoggerService) <br>
+    <b>Esto se utiliza para prevenir que el servicio no haya sido encontrado en los componentes padres y produzca un error</b>
+  </li>
+  <li>@Self() <br>
+  constructor(@Self() private readonly loggerService: LoggerService) <br>
+  <b>Solo busca el servicio donde se ha implementado, no buscandolo en los componentes padres</b>
+  <h4>Solucion:</h4>
+ <pre>
+  @Component(
+    selector: 'app-menu',
+    templateUrl: './menu.component.html',
+    styleUrls: ['./menu.component.css'],
+    <b> providers: [LoggerService]</b>
+  )
+ </pre>
+  </li>
+  <li>@SkipSelf()<br>
+    constructor(@SkipSelf() private readonly loggerService: LoggerService) <br>
+    <b>Salta el servicio donde se ha implementado, buscandolo en los componentes padres</b>
+  </li>
+  <li>@Host() <br>
+    <b>Se utiliza en directivas</b>
+  </li>
+</ul>

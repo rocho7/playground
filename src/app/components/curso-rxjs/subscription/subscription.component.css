@@ -1,0 +1,10 @@
+.inline {
+  display: inline-flex;
+}
+
+.message-alert {
+  border: 3px solid #fff000;
+  background-color: coral;
+  text-decoration: aliceblue;
+  font-size: 150%;
+}

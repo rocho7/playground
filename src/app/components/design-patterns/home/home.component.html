@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <h3>Example by using Injector Token</h3>
+    <p>home works!</p>
+    <app-widget-wrapper class="col-3">
+      <app-velocity-widget></app-velocity-widget>
+    </app-widget-wrapper>
+    <app-widget-wrapper class="col-3">
+        <app-weather-widget></app-weather-widget>
+    </app-widget-wrapper>
+  </div>
+
+  <div class="row">
+    <h3>Example data grid wrapper</h3>
+    <app-data-grid-wrapper>
+      <app-breadcrumb></app-breadcrumb>
+      <app-data-grid [service]="dataGridService" [columns]="columnsDataGrid">
+      </app-data-grid>
+    </app-data-grid-wrapper>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<p>mail-app works!</p>
+<div class="mail">
+  <router-outlet
+    (activate)="onActivate($event)"
+    (deactivate)="onDeactivate($event)"
+  >
+  </router-outlet>
+</div>
+<div class="mail">
+  <h2>outlet pane</h2>
+  <router-outlet name="pane"></router-outlet>
+</div>

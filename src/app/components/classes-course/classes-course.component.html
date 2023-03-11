@@ -1,0 +1,31 @@
+<p>classes-course works!</p>
+<h1>Access modifiers</h1>
+<h6>método private es SOLO accesible desde la clase.</h6>
+<h6>
+  método protected es accesible desde las clases que herendan(HIJAS), no desde
+  sus instancias.
+</h6>
+<h5>Ejemplo</h5>
+<p>Creamos una clase Person con la propiedad name</p>
+<p>protected name: string</p>
+<p>
+  y la extendemos en Admin, instanciamos Admin y llamar a la propiedad name dará
+  error porque es protected
+</p>
+<p>class Admin extends Person</p>
+<p>let admin = new Admin()</p>
+<p>admin.name ---> ERRROR ES PROTECTED</p>
+<h5>Shorthand para modifiers</h5>
+<p>
+  No hace falta crear propiedades en las clases, ya que es redundante, bastará
+  con asignar los access modifiers en el constructor
+</p>
+<p>constructor(protected name: string, public age: number)</p>
+<h2>GENERICS</h2>
+<p>T significa un tipo genérico</p>
+<p>
+  T[] permite cualquir tipo de array, es decir, array de numbers, strings,
+  objectos...
+</p>
+<h1>ABSTRACT CLASS</h1>
+<app-abstract-class></app-abstract-class>

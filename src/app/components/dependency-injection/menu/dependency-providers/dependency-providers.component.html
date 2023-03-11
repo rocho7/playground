@@ -1,0 +1,73 @@
+<h3>dependency-providers!</h3>
+<a href="https://www.youtube.com/watch?v=T1xmCC4y3xo">Video Decoded Fronted Dependency providers</a> <br>
+<a href="https://runebook.dev/es/docs/angular/guide/dependency-injection-providers">Ejemplo dependecy providers</a>
+<div class="row">
+  <div class="col-6">
+    useClass <br>
+    constructor(private readonly loggerService: LoggerService) <br>
+    <b>Cuando Angular llame a LoggerService, este creará una instancia de ExperimentalLoggerService ( los dos servicios deben tener la misma interfaz). <br>
+    Te permite crear una implementación alternativa</b>
+    <pre>
+      @Component(
+        selector: 'app-dependency-provider',
+        templateUrl: './dependency-providers.component.html',
+        providers: [
+            provide: LoggerService,
+            useClass: ExperimentalLoggerService
+        ]
+      )
+    </pre>
+    <h4>Lo de arriba sería igual que:</h4>
+    <p>const loggerService = new ExperimentalLoggerService()</p>
+    <p>genera una instancia con la clase(injector DI) que le pasas en <b>useClass</b></p>
+  </div>
+
+  <div class="col-6">
+    <app-use-class></app-use-class>
+  </div>
+
+      <div class="col-6">
+          useFactory <br>
+        constructor(private readonly loggerService: LoggerService) <br>
+        <b>Se pueden utilizar diferentes servicios de acuerdo con la condición ( nos permitiría carga un servicio dinámicamente).</b>
+        <b>La Factory nos devolvería el servicio a utilizar dependiendo de la condición. Pudiendo pasar otro servicio como [deps]</b>
+        <h4>Solucion:</h4>
+      <pre>
+        @Component(
+          selector: 'app-menu',
+          templateUrl: './menu.component.html',
+          styleUrls: ['./menu.component.css'],
+          provide: UserInfoService,
+            useFactory: () =>
+              const dev = Math.random() > 0.5;
+              console.log(dev);
+              if (dev) // abre llaves
+                return new LoggerService();
+              else //abre llaves
+                return new ExperimentalLoggerService();
+              //cierra llaver
+            //cierra llaves.
+            deps: [] // deps serán las dependencias que se pasen en useFactory:() como parámetro.
+            <p>Ejemplo: deps: [http] useFactory:(http: HttpClient) =></p>
+        )
+      </pre>
+      </div>
+
+
+      <div class="col-6">
+        <button class="btn btn-info" (click)="changeService('one')">Call service one</button>&nbsp;&nbsp;
+        <button class="btn btn-warning" (click)="changeService('two')">Call service two</button>
+
+        <app-use-factory *ngIf="serviceSelected"></app-use-factory>
+
+      </div>
+      <div class="col-6">
+        useExisting<br>
+        <p>Se utiliza como alias de un DI</p>
+      </div>
+      <div class="col-6">
+        useValue <br>
+          <b>Simplemente se le pasa un valor</b>
+      </div>
+</div>
+
