@@ -27,10 +27,19 @@
                 >Trash</a
               >
             </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                [routerLink]="['dashboard']"
+                routerLinkActive="active"
+                >Dashboard</a
+              >
+            </li>
           </ul>
         </div>
       </div>
     </nav>
-    <app-mail-app></app-mail-app>
+    <!-- <app-mail-app></app-mail-app> -->
+    <router-outlet></router-outlet>
   </div>
 </div>

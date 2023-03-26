@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { AuthGuard } from "./auth/auth.guard";
 import { MailViewComponent } from "./mail/components/mail-view/mail-view.component";
 import { MailFolderComponent } from "./mail/containers/mail-folder/mail-folder.component";
 import { MailFolderResolve } from "./mail/containers/mail-folder/mail-folder.resolve";
@@ -9,6 +10,7 @@ const routes: Routes = [
   {
     path: "",
     component: RoutingComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: "folder/:name",
@@ -21,6 +23,12 @@ const routes: Routes = [
         path: "message/:id",
         component: MailViewComponent,
         outlet: "pane",
+      },
+      {
+        path: "dashboard",
+        canLoad: [AuthGuard],
+        loadChildren: () =>
+          import("./dashboard/dashboard.module").then((m) => m.DashboardModule),
       },
     ],
   },
