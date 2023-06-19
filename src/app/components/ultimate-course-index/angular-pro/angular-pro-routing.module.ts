@@ -33,6 +33,13 @@ const routes: Routes = [
         loadChildren: () =>
           import("./routing/routing.module").then((m) => m.RoutingModule),
       },
+      {
+        path: "dependencyInjectionZone",
+        loadChildren: () =>
+          import(
+            "./dependencyInjectionZone/dependency-injection-zone-wrapper/dependency-injection-zone-wrapper.module"
+          ).then((m) => m.DependencyInjectionZoneWrapperModule),
+      },
     ],
   },
 ];

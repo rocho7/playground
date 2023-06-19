@@ -5,6 +5,7 @@ import { MailFolderComponent } from "./containers/mail-folder/mail-folder.compon
 import { RouterModule, Routes } from "@angular/router";
 import { MailAppComponent } from "./components/mail-app/mail-app.component";
 import { MailViewComponent } from "./components/mail-view/mail-view.component";
+import { MailViewGuard } from "./components/mail-view/mail-view.guard";
 
 export const ROUTES: Routes = [
   {
@@ -15,6 +16,7 @@ export const ROUTES: Routes = [
   {
     path: "message/:id",
     component: MailViewComponent,
+    canDeactivate: [MailViewGuard],
   },
 ];
 
@@ -25,6 +27,7 @@ export const ROUTES: Routes = [
     MailFolderComponent,
     MailViewComponent,
   ],
+  providers: [MailViewGuard],
   imports: [CommonModule, RouterModule.forChild(ROUTES)],
   exports: [MailAppComponent],
 })

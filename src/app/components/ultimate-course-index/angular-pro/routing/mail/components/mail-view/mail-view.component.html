@@ -1,1 +1,11 @@
 <h1>mail-view works!</h1>
+<div class="mail-reply">
+  <textarea
+    cols="30"
+    rows="10"
+    (change)="updateReply($event.target)"
+    placeholder="Type your reply..."
+    [value]="reply"
+  ></textarea>
+  <button type="button" (click)="sendReply()">Send</button>
+</div>

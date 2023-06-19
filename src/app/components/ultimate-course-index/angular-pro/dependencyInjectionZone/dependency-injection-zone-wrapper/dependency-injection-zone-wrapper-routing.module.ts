@@ -1,11 +1,11 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { CreandoDecoradorsComponent } from "./creando-decoradors.component";
+import { DependencyInjectionZoneWrapperComponent } from "./dependency-injection-zone-wrapper.component";
 
 const routes: Routes = [
   {
     path: "",
-    component: CreandoDecoradorsComponent,
+    component: DependencyInjectionZoneWrapperComponent,
   },
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class CreandoDecoradorsRoutingModule {}
+export class DependencyInjectionZoneWrapperRoutingModule {}

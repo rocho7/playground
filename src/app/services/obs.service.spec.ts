@@ -28,7 +28,7 @@ const listPhotos = [
     amount: 20,
   },
 ];
-fdescribe("ObsService", () => {
+describe("ObsService", () => {
   let service: ObsService;
   let httpClientSpy: { post: jasmine.Spy; get: jasmine.Spy };
 

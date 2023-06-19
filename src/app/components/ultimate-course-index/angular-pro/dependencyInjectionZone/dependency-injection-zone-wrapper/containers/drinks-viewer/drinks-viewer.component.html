@@ -1,0 +1,5 @@
+<p>drinks-viewer works!</p>
+<div *ngFor="let item of (items | async)?.drinks">
+  {{ item?.name }} {{ item?.price | currency : "USD" }}
+  {{ item?.location }}
+</div>

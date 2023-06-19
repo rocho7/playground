@@ -33,7 +33,7 @@ const obsSerivceMock = {
   remove: () => null,
 };
 
-fdescribe("PruebasTestingComponent", () => {
+describe("PruebasTestingComponent", () => {
   let app: PruebasTestingComponent;
   let n: number = 0;
   let fixture: ComponentFixture<PruebasTestingComponent>;

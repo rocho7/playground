@@ -1,0 +1,6 @@
+<p>food-viewer works!</p>
+
+<div *ngFor="let item of (items | async)?.food">
+  {{ item?.name }} {{ item?.price | currency : "USD" }}
+  {{ item?.location }}
+</div>

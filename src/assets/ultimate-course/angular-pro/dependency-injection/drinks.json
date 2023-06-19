@@ -1,0 +1,19 @@
+{
+  "drinks": [
+    {
+      "name": "Coca-cola",
+      "price": 222,
+      "location": "Torrent"
+    },
+    {
+      "name": "Beer",
+      "price": 2322,
+      "location": "Torrent"
+    },
+    {
+      "name": "Spiritual drinks",
+      "price": 111,
+      "location": "Torrent"
+    }
+  ]
+}

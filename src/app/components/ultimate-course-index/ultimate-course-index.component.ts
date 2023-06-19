@@ -12,6 +12,6 @@ export class UltimateCourseIndexComponent implements OnInit {
   ngOnInit(): void {}
 
   goTo(navigateTo: string): void {
-    this.router.navigate(["ultimate", "angular-pro"]);
+    this.router.navigate(["ultimate", navigateTo]);
   }
 }

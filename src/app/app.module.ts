@@ -29,6 +29,7 @@ import { CoreModule } from "./core/core.module";
 import { CategoryModule } from "./category/category.module";
 import { SpinnerInterceptorInterceptor } from "./core/interceptors/spinner-interceptor.interceptor";
 import { PruebasTestingModule } from "./pruebas-testing/pruebas-testing.module";
+import { FOOD_API_TOKEN } from "./components/ultimate-course-index/angular-pro/dependencyInjectionZone/dependency-injection-zone-wrapper/token";
 
 @NgModule({
   declarations: [
@@ -71,6 +72,10 @@ import { PruebasTestingModule } from "./pruebas-testing/pruebas-testing.module";
     //   useFactory: getUser,
     //   deps: [UserService]
     // }
+    {
+      provide: FOOD_API_TOKEN,
+      useValue: "/assets/ultimate-course/angular-pro/dependency-injection/",
+    },
   ],
   bootstrap: [AppComponent],
 })

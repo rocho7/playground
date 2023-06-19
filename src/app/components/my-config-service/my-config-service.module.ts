@@ -1,19 +1,14 @@
-import { ModuleWithProviders, NgModule } from '@angular/core';
-import { MyConfigService, APP_NAME } from './my-config.service';
-
-
+import { ModuleWithProviders, NgModule } from "@angular/core";
+import { MyConfigService, APP_NAME } from "./my-config.service";
 
 @NgModule({
-  providers: []
+  providers: [],
 })
 export class MyConfigServiceModule {
   static forRoot(appName: string): ModuleWithProviders<any> {
     return {
       ngModule: MyConfigServiceModule,
-      providers: [
-        { provide: APP_NAME, useValue: appName},
-        MyConfigService
-      ]
-    }
+      providers: [{ provide: APP_NAME, useValue: appName }, MyConfigService],
+    };
   }
- }
+}

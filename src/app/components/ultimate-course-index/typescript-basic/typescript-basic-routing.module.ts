@@ -1,11 +1,11 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { CreandoDecoradorsComponent } from "./creando-decoradors.component";
+import { TypescriptBasicComponent } from "./typescript-basic.component";
 
 const routes: Routes = [
   {
     path: "",
-    component: CreandoDecoradorsComponent,
+    component: TypescriptBasicComponent,
   },
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class CreandoDecoradorsRoutingModule {}
+export class TypescriptBasicRoutingModule {}

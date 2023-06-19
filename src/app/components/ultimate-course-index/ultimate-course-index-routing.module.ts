@@ -14,6 +14,13 @@ const routes: Routes = [
         (m) => m.AngularProModule
       ),
   },
+  {
+    path: "typescript-basic",
+    loadChildren: () =>
+      import("./typescript-basic/typescript-basic.module").then(
+        (m) => m.TypescriptBasicModule
+      ),
+  },
 ];
 
 @NgModule({
