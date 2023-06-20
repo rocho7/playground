@@ -1,0 +1,18 @@
+ [
+    {
+      "storeId": 10292,
+      "storeToken": "123abc",
+      "location": "ASIA"
+    },
+    {
+      "storeId": 32292,
+      "storeToken": "456def",
+      "location": "UK"
+    },
+    {
+      "storeId": 12456,
+      "storeToken": "780ghi",
+      "location": "USA"
+    }
+  ]
+
