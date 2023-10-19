@@ -6,6 +6,15 @@ const routes: Routes = [
   {
     path: "",
     component: TypescriptBasicComponent,
+    children: [
+      {
+        path: "understanding-this",
+        loadChildren: () =>
+          import("./understanding-this/understanding-this.module").then(
+            (m) => m.UnderstandingThisModule
+          ),
+      },
+    ],
   },
 ];
 

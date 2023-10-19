@@ -11,19 +11,187 @@
 
   <div class="form-group">
     <label>User name</label>
-    <input type="text" id="user" name="user" [(ngModel)]="user" class="form-control">
+    <input
+      type="text"
+      id="user"
+      name="user"
+      [(ngModel)]="user"
+      class="form-control"
+    />
   </div>
 
   <div class="form-group">
     <label>Amount</label>
-    <input type="number" [(ngModel)]="amount" class="form-control">
+    <input type="number" [(ngModel)]="amount" class="form-control" />
   </div>
 
   <div class="form-group">
-    <input type="button" value="Pay" (click)="submit()" class="btn btn-primary">
+    <input
+      type="button"
+      value="Pay"
+      (click)="submit()"
+      class="btn btn-primary"
+    />
   </div>
   <!-- </form> -->
 </div>
 <div>
   <h3 #messagePayment></h3>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h3>SINGLETON</h3>
+      <p>
+        Añadimos la propiedad private al constructor para evitar realizar new
+        WeekDays()
+      </p>
+      <p>Se encarga que solo exista una instancia de una clase</p>
+      <p>Se genera dos instancia pero solo hace referencia a la primera.</p>
+      <p #singleton1></p>
+      <p #singleton2></p>
+    </div>
+
+    <div class="col-6">
+      <h3>STRATEGY</h3>
+      <p>Evita los switch/case</p>
+      <p>Ayuda a tener nuevos comportamientos a un objeto</p>
+      <p>Esta formado por el contexto y la estrategia</p>
+      <p>
+        Contexto: está formado por una estrategia y una/s acción/es(métodos)
+      </p>
+      <p>Estrategia: se puede crear tantas estrategias como sea necesario.</p>
+      <mat-form-field>
+        <mat-label>Login by</mat-label>
+        <mat-select
+          [(ngModel)]="selectedValue"
+          name="food"
+          (selectionChange)="valueChange()"
+        >
+          <mat-option
+            *ngFor="let method of loginMethods"
+            [value]="method.value"
+          >
+            {{ method.label }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+        <mat-label>User</mat-label>
+        <input matInput type="text" [(ngModel)]="userLogin" />
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+        <mat-label>Password</mat-label>
+        <input matInput type="text" [(ngModel)]="password" />
+      </mat-form-field>
+      <button
+        mat-stroked-button
+        color="accent"
+        [disabled]="!selectedValue || !userLogin || !password"
+        (click)="submitLogin()"
+      >
+        Login
+      </button>
+      <p #strategy></p>
+    </div>
+    <div class="col-6">
+      <h3>DECORATOR</h3>
+      <p>
+        Reduce el tipo de genarquía, evitando las herencias, envolviendo
+        clases(extendiendole funcionalidades)
+      </p>
+      <section class="example-section">
+        <span class="example-list-section">
+          <ul>
+            <mat-radio-group
+              aria-labelledby="example-radio-group-label"
+              class="example-radio-group"
+              [(ngModel)]="radioButtonSelected"
+            >
+              <mat-radio-button
+                class="example-radio-button"
+                *ngFor="let board of boardList.boards"
+                [value]="board.name"
+                (change)="updateAllCompleteBoard(board)"
+              >
+                {{ board.name }}
+              </mat-radio-button>
+            </mat-radio-group>
+          </ul>
+        </span>
+      </section>
+
+      <section class="example-section">
+        <span class="example-list-section">
+          <ul>
+            <mat-radio-group
+              aria-labelledby="example-radio-group-label"
+              class="example-radio-group"
+              [(ngModel)]="radioButtonRoomSelected"
+            >
+              <mat-radio-button
+                class="example-radio-button"
+                *ngFor="let room of rooms"
+                [value]="room.name"
+                (change)="selectRoom(room)"
+              >
+                {{ room.name }}
+              </mat-radio-button>
+            </mat-radio-group>
+          </ul>
+        </span>
+      </section>
+      <p>{{ messageBoardRoom }}</p>
+    </div>
+    <div class="col-6">
+      <h3>BUILDER</h3>
+      <p>
+        Utilizado en las clases que tiene muchos parámetros en el constructor
+      </p>
+      <p>Lo que hace es encadenar el constructor en un grupo de métodos</p>
+      <p>
+        Se puede implementar una clase <b>Director</b> para simplificar acciones
+        repetitivas
+      </p>
+    </div>
+    <div class="col-6">
+      <h3>STATE</h3>
+      <p>Tipo comportamiento</p>
+      <h4>Top number plus accumulator equal FullState</h4>
+      <mat-form-field class="example-form-field">
+        <mat-label>It'll be the top</mat-label>
+        <input matInput type="number" [(ngModel)]="top" />
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+        <mat-label>Add a number</mat-label>
+        <input matInput type="number" [(ngModel)]="accumulator" />
+      </mat-form-field>
+      <button
+        mat-stroked-button
+        color="accent"
+        [disabled]="!top || !accumulator"
+        (click)="submitState()"
+      >
+        Add
+      </button>
+      <button
+        mat-stroked-button
+        color="accent"
+        [disabled]="!top || !accumulator"
+        (click)="subtractState()"
+      >
+        Subtract
+      </button>
+      <ul *ngFor="let item of stateStore">
+        <li>{{ item }}</li>
+      </ul>
+    </div>
+    <div class="col-6">
+      <h3>BRIGDE</h3>
+      <a href="https://www.youtube.com/watch?v=6bIHhzqMdgg"
+        >Video bridge pattern</a
+      >
+      <p></p>
+    </div>
+  </div>
 </div>
