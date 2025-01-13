@@ -1,0 +1,19 @@
+{
+    "carts": [
+        { "product_id": 1, "quantity": 10 },
+        { "product_id": 2, "quantity": 50 }
+    ],
+    "products": [
+        { "id": 1, "price": 2800, "name": "MacBook pro" },
+        { "id": 2, "price": 28, "name": "USB pro" },
+        { "id": 3, "price": 500, "name": "Ipod pro" },
+        { "id": 4, "price": 200, "name": "Iphone" },
+        { "id": 5, "price": 800, "name": "Apple watch" }
+    ],
+    "branches": [
+      { "id": "B182" },
+      { "id": "B183" },
+      { "id": "A111" },
+      { "id": "C123" }
+    ]
+}

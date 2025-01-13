@@ -1,0 +1,19 @@
+{
+  "sides": [
+    {
+      "name": "Fries",
+      "price": 677,
+      "location": "Torrent"
+    },
+    {
+      "name": "Chips",
+      "price": 2,
+      "location": "Torrent"
+    },
+    {
+      "name": "Wings",
+      "price": 117,
+      "location": "Torrent"
+    }
+  ]
+}
