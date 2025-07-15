@@ -124,6 +124,11 @@ const routes: Routes = [
         (m) => m.ParentChildModule
       ),
   },
+  {
+    path: "ng-redux-angular",
+    loadChildren: () =>
+      import("../ng-rdx/ng-rdx.module").then((m) => m.NgRdxModule),
+  },
 ];
 
 @NgModule({

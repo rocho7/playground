@@ -133,7 +133,7 @@ export class OperatorsYMetodosCombinacionObservablesComponent
         ),
         reduce((acc, curr) => acc + curr, 0)
       )
-      .subscribe(console.log); // La salida debe de ser 32
+      .subscribe((res) => console.log("reduce ", res)); // La salida debe de ser 32
   }
 
   randoms(): void {

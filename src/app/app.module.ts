@@ -31,6 +31,11 @@ import { SpinnerInterceptorInterceptor } from "./core/interceptors/spinner-inter
 import { PruebasTestingModule } from "./pruebas-testing/pruebas-testing.module";
 import { FOOD_API_TOKEN } from "./components/ultimate-course-index/angular-pro/dependencyInjectionZone/dependency-injection-zone-wrapper/token";
 
+//?NGRX
+import { StoreModule } from "@ngrx/store";
+import { contadorReducerNgRx } from "./components/ng-rdx/reducer/reducer";
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +61,11 @@ import { FOOD_API_TOKEN } from "./components/ultimate-course-index/angular-pro/d
     MyConfigServiceModule.forRoot("***appRoot***"),
     CoreModule,
     CategoryModule,
+    StoreModule.forRoot({ contador: contadorReducerNgRx }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
   ],
   providers: [
     {
