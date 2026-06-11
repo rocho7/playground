@@ -10,7 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "hmr": "ng serve --configuration hmr",
-    "startUltimate": "webpack-dev-server"
+    "startUltimate": "webpack-dev-server",
+    "build-ghpages": "set NODE_OPTIONS=--openssl-legacy-provider && ng build --base-href https://rocho7.github.io/playground/"
   },
   "husky": {
     "hooks": {
